@@ -1,0 +1,25 @@
+{
+  "name": "proyectomesadeayuda",
+  "version": "1.0.0",
+  "description": "Creacion de Modulo para Generar tickets de Soporte",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "gulp"
+  },
+  "keywords": [
+    "PHP",
+    "MYSQL",
+    "JS",
+    "SASS",
+    "GULP"
+  ],
+  "author": "ING.LUIS A CHI GARCIA & MECE. ANTONIO GILBON ABURTO",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.77.7"
+  }
+}

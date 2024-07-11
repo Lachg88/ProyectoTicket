@@ -1,0 +1,49 @@
+<?php
+//iniciar las variables de session
+session_start();
+ini_set('max_execution_time', 300);
+error_reporting(1);
+//error_reporting(E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
+
+date_default_timezone_set('America/Mexico_City');
+
+$opc = $_REQUEST['opcion'];
+include_once('../Conexion.php');
+
+if($opc==1){
+    require_once("modeloCarrera.php");
+    $nombreCarrera=new carrera();
+    $idCarrera = $_REQUEST['idCarrera'];
+    $clave = $_REQUEST['clave'];
+    $nombCarrera = $_REQUEST['nombre'];
+    $describc = $_REQUEST['descripcion'];
+    $nivel = $_REQUEST['idNivel'];
+    $act = $_REQUEST['activo'];
+    $sigl = $_REQUEST['siglas'];
+    $clavedgp=$_REQUEST['clavedgp'];
+    echo $msg=$nombreCarrera->actualizar($idCarrera,$clave,$nombCarrera,$describc,$nivel,$act,$sigl,$clavedgp);
+    }
+
+
+if($opc==2){
+require_once("modeloCarrera.php");
+$nombreCarrera=new carrera();
+$clave = $_REQUEST['clave'];
+$nombCarrera = $_REQUEST['nombre'];
+$describc = $_REQUEST['descripcion'];
+$nivel = $_REQUEST['idNivel'];
+$act = $_REQUEST['activo'];
+$sigl = $_REQUEST['siglas'];
+$clavedgp=$_REQUEST['clavedgp'];
+echo $msg=$nombreCarrera->insertar($clave,$nombCarrera,$describc,$nivel,$act,$sigl,$clavedgp);
+}
+
+if($opc==3){
+    require_once("modeloCarrera.php");
+$nombreCarrera=new carrera();
+$idCarrera = $_REQUEST['idCarrera'];
+echo $msg=$nombreCarrera->eliminar($idCarrera);
+}
+
+return $msg;
+?>
