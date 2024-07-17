@@ -36,10 +36,11 @@ if (isset($_REQUEST['pag'])) {
          include('moduloTickets/tickets.php');
          break;
       default:
-         echo "index.php";
+      echo "index.php";
 
    }
 }
-echo "desde index ".$_SESSION['pagina'];
-
+else {
+   include("moduloTickets/views/vistaFinal.php");
+}
 include_once('vista/footer.php');

@@ -6,6 +6,10 @@
 require_once("moduloTickets/models/modeloTickets.php");
 $objticket = new tickets();
 
+if ($_SESSION['pagina'] == '') {
+    require_once("moduloTickets/views/vistaFinal.php");
+}
+
 if ($_SESSION['pagina'] == 'Ticket') {
     $tickets = $objticket->get_tickets();
     require_once("moduloTickets/views/vistatbltickets.php");
@@ -30,6 +34,6 @@ if ($_SESSION['pagina'] == 'Eliminar Ticket') {
     $id = $_SESSION['id'];
     if ($id > 0)
         $tickets = $objticket->getTicketxid($id);
-        require_once("moduloTickets/views/vistaEliminar.php");
+    require_once("moduloTickets/views/vistaEliminar.php");
     include_once('moduloTickets/views/vistamsgtickets.php');
 }

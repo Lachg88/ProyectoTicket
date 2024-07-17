@@ -1,6 +1,5 @@
 // var redirigirDespuesDeAlerta = true;
 $(document).ready(function () {
-
     $('#formulario1').submit(function (e) {
         e.preventDefault();
 
@@ -17,59 +16,58 @@ $(document).ready(function () {
             btn = document.getElementById('btnEnviar');
             
             //alert(per.value);
-            alert(btn.value);
+            //alert(btn.value);
             opc = btn.value;
-            console.log(opc,"valor")
+            console.log(opc,"valor btn")
+            
+            $.ajax({
+                type: 'POST',
+                url: 'moduloTickets/models/sqlTickets.php?opcion=' + opc,
+                data: $('#formulario1').serialize(),
+                beforeSend: function () {
+                    // alert('beforeSend');
+                    btnEnviar.val("Enviando...");
+                    //btnEnviar.text("Enviando..."); //Para button             
+                    btnEnviar.attr("disabled", "disabled");
+                },
+                complete: function (data) {
+                    // alert(data);
+                    btnEnviar.val(opc);
+                    btnEnviar.removeAttr("disabled");
+                },
+                success: function (respuesta) {
+                    // opc = opc.replace(/[^a-zA-Z0-9 ]/g, '');
+                    console.log(respuesta)
+                    switch (respuesta) {
+                        case 'Registro insertado':
+                            btnEnviar.val(opc);
+                            document.getElementById('msgAlerta').style.display = 'block';
+                            document.getElementById("msgtexto").innerHTML = "<span style='color:black'><b>El ticket fue creado con exito</b></span>";
+                            redirigirDespuesDeAlerta = true;
+                            break;
+                        case 'Ticket Actualizado':
+                            btnEnviar.val(opc);
+                            document.getElementById('msgAlerta').style.display = 'block';
+                            document.getElementById("msgtexto").innerHTML = "<span style='color:black'><b>El ticket se actualizó con exito</b></span>";
+                            redirigirDespuesDeAlerta = true;
+                            break;
+                        case 'Error al Actualizar':
+                            btnEnviar.val(opc);
+                            document.getElementById('msgAlerta').style.display = 'block';
+                            document.getElementById("msgtexto").innerHTML = "<span style='color:black'><b>Hay un error en el ticket</b></span>";
+                            redirigirDespuesDeAlerta = true;
+                            break;
+                        default:
+                            alert('Lo lamentamos, respuesta invalida:' + respuesta);
+                    }
 
-            // $.ajax({
-            //     type: 'POST',
-            //     url: 'moduloTickets/models/sqlTickets.php?opcion=' + opc,
-            //     data: $('#formulario1').serialize(),
-            //     beforeSend: function () {
-            //         // alert('beforeSend');
-            //         btnEnviar.val("Enviando...");
-            //         //btnEnviar.text("Enviando..."); //Para button             
-            //         btnEnviar.attr("disabled", "disabled");
-            //     },
-            //     complete: function (data) {
-            //         // alert(data);
-            //         btnEnviar.val(opc);
-            //         btnEnviar.removeAttr("disabled");
-            //         console.log(btnEnviar);
-            //     },
-            //     success: function (respuesta) {
-            //         // opc = opc.replace(/[^a-zA-Z0-9 ]/g, '');
-            //         console.log(respuesta)
-            //         switch (respuesta) {
-            //             case 'Registro insertado':
-            //                 btnEnviar.val(opc);
-            //                 document.getElementById('msgAlerta').style.display = 'block';
-            //                 document.getElementById("msgtexto").innerHTML = "<span style='color:black'><b>El ticket fue creado con exito</b></span>";
-            //                 redirigirDespuesDeAlerta = true;
-            //                 break;
-            //             case 'Registro actualizado':
-            //                 btnEnviar.val(opc);
-            //                 document.getElementById('msgAlerta').style.display = 'block';
-            //                 document.getElementById("msgtexto").innerHTML = "<span style='color:black'><b>El ticket se actualizó con exito</b></span>";
-            //                 redirigirDespuesDeAlerta = true;
-            //                 break;
-            //             case 'Error al actualizar':
-            //                 btnEnviar.val(opc);
-            //                 document.getElementById('msgAlerta').style.display = 'block';
-            //                 document.getElementById("msgtexto").innerHTML = "<span style='color:black'><b>Hay un error en el ticket</b></span>";
-            //                 redirigirDespuesDeAlerta = true;
-            //                 break;
-            //             default:
-            //                 alert('Lo lamentamos, respuesta invalida:' + respuesta);
-            //         }
+                },
+                error: function (data) {
+                    // Se ejecuta si la peticón ha sido erronea
+                    alert("Error " + data);
+                }
 
-            //     },
-            //     error: function (data) {
-            //         // Se ejecuta si la peticón ha sido erronea
-            //         alert("Error " + data);
-            //     }
-
-            // });
+            });
         }
 
     });
