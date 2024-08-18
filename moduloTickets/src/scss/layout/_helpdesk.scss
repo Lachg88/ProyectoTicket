@@ -1,6 +1,26 @@
 @use "base/variables" as v;
 
-table {
-    background-color: v.$morado;
-    border: greenyellow solid;
+.btnNvaPreg{
+    margin-top: 1rem;
+    width: 18%;
+}
+
+.mitable {
+    background-color: v.$blanco;
+    font-size:12px;
+    border-color:v.$negro solid;
+}
+
+.cabeceratb {
+    font-size:12px; 
+    overflow: hidden;
+    text-align: center; 
+    color: v.$blanco;
+    background-color: v.$verdeoscuro;
+}
+
+.bg-celdas {
+    tr:nth-child(even){
+        background-color: lighten(v.$verdeoscuro, 40%);
+    }
 }

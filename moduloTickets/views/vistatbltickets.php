@@ -1,13 +1,13 @@
 <div style="width:100%; padding: 0% 5% 5% 5%;">
     <div class="d-flex justify-content-end">
-        <a href="index.php?pag=Alta de Ticket" alt="Agregar" class="btn btn-rounded btn-primary" style="width: 17%;">
+        <a href="index.php?pag=Alta de Ticket" alt="Agregar" class="btn btn-rounded btn-primary btnNvaPreg">
             <i class="fa fa-plus"></i> Nueva Pregunta
         </a>
     </div>
-    <table id="example" class="table table-bordered" style="font-size:12px;border-color:#4772e7">
+    <table id="example" class="table table-bordered mitabla" >
         <br>
-        <thead style="font-size:12px">
-            <tr style="overflow: hidden;text-align: center">
+        <thead class="cabeceratb">
+            <tr>
                 <th>ID</th>
                 <th>FECHA TICKET</th>
                 <th>NUMERO DE TICKET</th>
@@ -21,7 +21,7 @@
                 <th>OPCIONES</th>
             </tr>
         </thead>
-        <tbody style="font-size:12px">
+        <tbody class="bg-celdas" style="font-size:12px">
             <?php
             foreach ($tickets as $ticket) { ?>
                 <tr>
