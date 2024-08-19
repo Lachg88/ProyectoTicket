@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-3">
-            <img src="../../../imagen/soporte.webp" class="img-fluid" alt="Image">
+            <img src="./moduloTickets/public/build/img/soporte.webp" class="img-fluid" alt="Image">
         </div>
         <div class="col-9 lead">
             <h5 style="font-size:20pt;color:#278A49;font-weight:500;"> BIENVENIDO AL SISTEMA DE SOPORTE SIGU
@@ -16,7 +16,7 @@
                 <div class="card-body text-center">
                     <strong>Nuevo Ticket</strong>
                     <div class="text-center">
-                        <img src="../../imagen/crear.png" alt="Image" width="60" height="60">
+                        <img src="./moduloTickets/public/build/img/crear.png" alt="Image" width="60" height="60">
                         <h5><i class="fa fa-file-text"></i> Abrir un nuevo ticket</h5>
                         <p class="text-justify">Crea una nueva solicitud y te ayudaremos a solucionarlo. Si deseas consultar el estado de tu incidencia utiliza el formulario de la derecha <em><strong>Comprobar estado de Ticket.</strong></em></p>
                         <p>Para abrir un nuevo <strong>ticket</strong> has click en el siguiente botón</p>
@@ -39,7 +39,7 @@
                 <div class="card-body text-center">
                     <strong>Comprobar estado de Ticket</strong>
                     <div class="text-center">
-                        <img src="../../imagen/crear2.png" alt="Image" width="60" height="60">
+                        <img src="./moduloTickets/public/build/img/crear2.png" alt="Image" width="60" height="60">
                         <h5><i class="fa fa-link"></i> Consultar estado de ticket</h5>
                     </div>
                     <form role="form" method="GET" action="consultarT.php">
