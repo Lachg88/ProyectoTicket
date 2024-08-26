@@ -49,68 +49,73 @@ $fecha_actual = getdate();
 $fecha_actual_completa = $fecha_actual['mday'] . " de " . $meses[$fecha_actual['mon'] - 1] . " del " . $fecha_actual['year'];
 
 ?>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <form id="formulario1" name="formulario1" method="post">
-                <input type="hidden" name="id" id="id" value="<?php echo $campo0; ?>">
-                <div class="form-group
+<section class="contenedor-form-altas">
+    <div class="form1-altas">
+        <div class="form1">
+        <header class="form1-header">
+            <p>Registro de Incidencia</p>
+        </header>
+        <div class="form1-body">
+        <form id="" name="formulario1" method="post">
+            <input type="hidden" name="id" id="id" value="<?php echo $campo0; ?>">
+            <div class="form-group
                 <?php if (isset($_SESSION['error'])) {
                     echo 'has-error';
                 } ?>">
-                    <label for="fecha">Fecha Ticket</label>
-                    <input class="form-control" type="text" id="fecha" value="<?php echo $fecha_actual_completa; ?>" placeholder="Fecha" name="fecha" required readonly>
-                    <!-- <span class="input-group-addon"><i class="fa fa-calendar"></i></span> -->
-                </div>
-                <div class="form-group <?php if (isset($_SESSION['error'])) {
-                                            echo 'has-error';
-                                        } ?>">
-                    <label for="numTicket">Número Ticket</label>
-                    <input type="number" class="form-control" id="numTicket" name="numTicket" value="<?php echo $campo2; ?>" required readonly>
-                </div>
-                <div class="form-group <?php if (isset($_SESSION['error'])) {
-                                            echo 'has-error';
-                                        } ?>">
-                    <label for="nombre_usuario">Nombre Usuario</label>
-                    <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" value="<?php echo $campo4; ?>" required>
-                </div>
-                <div class="form-group <?php if (isset($_SESSION['error'])) {
-                                            echo 'has-error';
-                                        } ?>">
-                    <label for="email_cliente">Correo Cliente</label>
-                    <input type="text" class="form-control" id="email_cliente" name="email_cliente" value="<?php echo $campo5; ?>" required>
-                </div>
-                <div class="form-group <?php if (isset($_SESSION['error'])) {
-                                            echo 'has-error';
-                                        } ?>">
-                    <label for="rol">Rol</label>
-                    <input type="text" class="form-control" id="rol" name="rol" value="<?php echo $campo6; ?>" required>
-                </div>
-                <div class="form-group <?php if (isset($_SESSION['error'])) {
-                                            echo 'has-error';
-                                        } ?>">
-                    <label for="asunto">Asunto</label>
-                    <input type="text" class="form-control" id="asunto" name="asunto" value="<?php echo $campo7; ?>" required>
-                </div>
-                <div class="form-group <?php if (isset($_SESSION['error'])) {
-                                            echo 'has-error';
-                                        } ?>">
-                    <label for="mensaje">Descripción del problema</label>
-                    <input type="text" class="form-control" id="mensaje" name="mensaje" value="<?php echo $campo8; ?>" required>
-                </div>
-                <div class="mb-5">
-                    <!-- Tu contenido aquí -->
-                    <div class="row">
-                        <div class="col-lg-3" style="text-align: center;">
-                            <input style="font-size: 18px;" type="Submit" class="btn btn-primary btn-block" value="<?php if ($_SESSION['pagina'] == 'Alta de Ticket') echo "Guardar";
-                                                                                                                    else echo "Actualizar"; ?>" name="btnEnviar" id="btnEnviar">
-                        </div>
-                        <div class="col-lg-3" style="text-align: center;">
-                            <a style="font-size: 18px;" href="index.php?pag=UsuarioTicket" class="btn btn-danger btn-block">Regresar</a>
-                        </div>
+                <label for="fecha">Fecha Ticket</label>
+                <input class="form-control" type="text" id="fecha" value="<?php echo $fecha_actual_completa; ?>" placeholder="Fecha" name="fecha" required readonly>
+                <!-- <span class="input-group-addon"><i class="fa fa-calendar"></i></span> -->
+            </div>
+            <div class="form-group <?php if (isset($_SESSION['error'])) {
+                                        echo 'has-error';
+                                    } ?>">
+                <label for="numTicket">Número Ticket</label>
+                <input type="number" class="form-control" id="numTicket" name="numTicket" value="<?php echo $campo2; ?>" required readonly>
+            </div>
+            <div class="form-group <?php if (isset($_SESSION['error'])) {
+                                        echo 'has-error';
+                                    } ?>">
+                <label for="nombre_usuario">Nombre Usuario</label>
+                <input type="text" class="form-control" id="nombre_usuario" name="nombre_usuario" value="<?php echo $campo4; ?>" required>
+            </div>
+            <div class="form-group <?php if (isset($_SESSION['error'])) {
+                                        echo 'has-error';
+                                    } ?>">
+                <label for="email_cliente">Correo Cliente</label>
+                <input type="text" class="form-control" id="email_cliente" name="email_cliente" value="<?php echo $campo5; ?>" required>
+            </div>
+            <div class="form-group <?php if (isset($_SESSION['error'])) {
+                                        echo 'has-error';
+                                    } ?>">
+                <label for="rol">Rol</label>
+                <input type="text" class="form-control" id="rol" name="rol" value="<?php echo $campo6; ?>" required>
+            </div>
+            <div class="form-group <?php if (isset($_SESSION['error'])) {
+                                        echo 'has-error';
+                                    } ?>">
+                <label for="asunto">Asunto</label>
+                <input type="text" class="form-control" id="asunto" name="asunto" value="<?php echo $campo7; ?>" required>
+            </div>
+            <div class="form-group <?php if (isset($_SESSION['error'])) {
+                                        echo 'has-error';
+                                    } ?>">
+                <label for="mensaje">Descripción del problema</label>
+                <input type="text" class="form-control" id="mensaje" name="mensaje" value="<?php echo $campo8; ?>" required>
+            </div>
+            <div class="mb-3">
+                <!-- Tu contenido aquí -->
+                <div class="form1-botones">
+                    <div class="col-md-6">
+                        <input type="Submit" class="btn btn-primary btn-block" value="<?php if ($_SESSION['pagina'] == 'Alta de Ticket') echo "Guardar";
+                                                                                                                else echo "Actualizar"; ?>" name="btnEnviar" id="btnEnviar">
+                    </div>
+                    <div class="col-md-6">
+                        <a href="index.php?pag=UsuarioTicket" class="btn btn-danger btn-block">Regresar</a>
                     </div>
                 </div>
-            </form>
+            </div>
+        </form>
         </div>
     </div>
-</div>
+    </div>
+</section>

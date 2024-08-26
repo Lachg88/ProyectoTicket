@@ -1,5 +1,4 @@
 <script src="./moduloTickets/public/build/js/tickets.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
 <?php
@@ -21,9 +20,8 @@ if ($_SESSION['pagina'] == 'UsuarioTicket') {
 }
 
 if ($_SESSION['pagina'] == 'Alta de Ticket' || $_SESSION['pagina'] == 'Actualizar Ticket') {
-    // require_once("moduloTickets/modeloDepartamento.php");
-    // $objdepto = new departamento();
     $id = $_SESSION['id'];
+    
     if ($id > 0)
         $tickets = $objticket->getTicketxid($id);
     require_once("moduloTickets/views/vistaAlta.php");

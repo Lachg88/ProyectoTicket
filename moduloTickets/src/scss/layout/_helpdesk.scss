@@ -1,4 +1,5 @@
 @use "base/variables" as v;
+@use "base/mixins" as m;
 
 .btnNvaPreg{
     margin-top: 1rem;
@@ -7,7 +8,6 @@
 
 .mitable {
     background-color: v.$blanco;
-    font-size:12px;
     border-color:v.$negro solid;
 }
 
@@ -20,7 +20,59 @@
 }
 
 .bg-celdas {
-    tr:nth-child(even){
-        background-color: lighten(v.$verdeoscuro, 40%);
+    tr:nth-child(odd){
+        background-color: lighten(v.$verdeoscuro, 50%);
+    }
+}
+
+
+/* CSS para el Formulario de Altas */
+
+
+.contenedor-form-altas {
+    background-color: v.$gris;
+
+    h3 {
+        color: v.$blanco;
+    }
+
+    .form1-altas {
+        @include m.contenedor;
+        width: 60%;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        border-top-left-radius: 40px 40px;
+    }
+}
+
+.form1 {
+    &-nombre {
+        font-size: 3.6rem;
+        font-weight: 900;
+        text-align: center;
+        color: v.$blanco;
+    }
+
+    &-header {
+        background-color: v.$verde;
+        padding: 0.5rem;
+        p {
+            text-align: center;
+            color: v.$blanco;
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            padding: 1rem 0;
+        }
+    }
+
+    &-body {
+        background-color: v.$blanco;
+        padding: 2rem;
+    }
+    &-botones{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }

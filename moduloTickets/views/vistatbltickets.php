@@ -4,7 +4,7 @@
             <i class="fa fa-plus"></i> Nueva Pregunta
         </a>
     </div>
-    <table id="example" class="table table-bordered mitabla" >
+    <table id="example" class="table table-bordered mitable" >
         <br>
         <thead class="cabeceratb">
             <tr>
