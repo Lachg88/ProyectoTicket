@@ -1,26 +1,26 @@
 @use "base/variables" as v;
 @use "base/mixins" as m;
 
-.btnNvaPreg{
+.btnNvaPreg {
     margin-top: 1rem;
     width: 18%;
 }
 
 .mitable {
     background-color: v.$blanco;
-    border-color:v.$negro solid;
+    border-color: v.$negro solid;
 }
 
 .cabeceratb {
-    font-size:12px; 
+    font-size: 12px;
     overflow: hidden;
-    text-align: center; 
+    text-align: center;
     color: v.$blanco;
     background-color: v.$verdeoscuro;
 }
 
 .bg-celdas {
-    tr:nth-child(odd){
+    tr:nth-child(odd) {
         background-color: lighten(v.$verdeoscuro, 50%);
     }
 }
@@ -56,6 +56,7 @@
     &-header {
         background-color: v.$verde;
         padding: 0.5rem;
+
         p {
             text-align: center;
             color: v.$blanco;
@@ -70,9 +71,18 @@
         background-color: v.$blanco;
         padding: 2rem;
     }
-    &-botones{
+
+    &-botones {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        justify-content: center;
         align-items: center;
+
+        @include m.tablet {
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+
     }
 }

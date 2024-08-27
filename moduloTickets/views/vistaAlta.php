@@ -105,11 +105,11 @@ $fecha_actual_completa = $fecha_actual['mday'] . " de " . $meses[$fecha_actual['
             <div class="mb-3">
                 <!-- Tu contenido aquí -->
                 <div class="form1-botones">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <input type="Submit" class="btn btn-primary btn-block" value="<?php if ($_SESSION['pagina'] == 'Alta de Ticket') echo "Guardar";
                                                                                                                 else echo "Actualizar"; ?>" name="btnEnviar" id="btnEnviar">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <a href="index.php?pag=UsuarioTicket" class="btn btn-danger btn-block">Regresar</a>
                     </div>
                 </div>
