@@ -1,72 +1,54 @@
-<div class="container">
-    <div class="row">
-        <div class="col-3">
-            <img src="./moduloTickets/public/build/img/soporte.webp" class="img-fluid" alt="Image">
+<section class="ticket">
+
+    <div class="ticket__row">
+        <div>
+            <picture class="ticket__image">
+                <source srcset="./moduloTickets/public/build/img/soporte.webp" type="image/webp">
+                <img src="./moduloTickets/public/build/img/soporte.png" alt="Sistema de Soporte SIGU">
+            </picture>
         </div>
-        <div class="col-9 lead">
-            <h5 style="font-size:20pt;color:#278A49;font-weight:500;"> BIENVENIDO AL SISTEMA DE SOPORTE SIGU
-            </h5>
-            <p class="text-justify" style="font-size:12pt;font-weight:500;">Es muy fácil de usar, si en algún momento experimenta problemas con alguno de nuestros módulos, no dude en enviarnos un ticket de soporte. Estaremos encantados de responder rápidamente y trabajar en la resolución de cualquier problema que pueda tener.</p>
-            <h5 style="font-size:12pt;font-weight:500;">Si ya nos ha enviado un ticket puede consultar el estado de este mediante su <strong>Ticket ID</strong></h5>
+        <div class="ticket__description">
+            <div class="ticket__title">Módulo de Soporte SIGU</div>
+            <div class="ticket__text">Nuestro sistema es fácil de usar. Si tienes algún problema con uno de nuestros módulos, puedes enviarnos un ticket de soporte. Estamos aquí para ayudarte a resolver cualquier inconveniente de manera rápida y eficiente.</div>
+            <div class="ticket__instruction">Puedes generar un nuevo ticket, o si ya has enviado un ticket, puedes consultar su estado ingresando tu <strong>Ticket ID</strong>.</div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-6">
-            <div class="card">
-                <div class="card-body text-center">
-                    <strong>Nuevo Ticket</strong>
-                    <div class="text-center">
-                        <img src="./moduloTickets/public/build/img/crear.png" alt="Image" width="60" height="60">
-                        <h5><i class="fa fa-file-text"></i> Abrir un nuevo ticket</h5>
-                        <p class="text-justify">Crea una nueva solicitud y te ayudaremos a solucionarlo. Si deseas consultar el estado de tu incidencia utiliza el formulario de la derecha <em><strong>Comprobar estado de Ticket.</strong></em></p>
-                        <p>Para abrir un nuevo <strong>ticket</strong> has click en el siguiente botón</p>
-                    </div>
-                    <div class="form-group">
-                        <div>
-                            <div class="text-center">
-                                <a href="index.php?pag=Alta de Ticket">
-                                    <button class="btn btn-primary"><i class="fa fa-file-text"></i> Crear Ticket</button>
-                                </a>
-                            </div>
-                            <BR>
-                        </div>
-                    </div>
+
+    <div class="ticket__container">
+
+        <div class="ticket__cards">
+        
+            <div class="ticket-card">
+                <header class="ticket-card__title"><p>Crear Nuevo Ticket</p></header>
+                <div class="ticket-card__info">
+                    <!-- <img src="./moduloTickets/public/build/img/crear.png" alt="Crear nuevo ticket" class="ticket-card__image"> -->
+                    <p class="ticket-card__subtitle"><i class="fa-solid fa-ticket ticket-card__icon"></i> Generar un Nuevo Ticket</p>
+                    <p class="ticket-card__text">Envíanos una solicitud de soporte y te ayudaremos a resolver el problema.</p>
+                    <div class="ticket-card__button-container"><a href="index.php?pag=Alta de Ticket" class="ticket-card__button ticket-card__enlace">Crear Ticket</a></div>
                 </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="card">
-                <div class="card-body text-center">
-                    <strong>Comprobar estado de Ticket</strong>
-                    <div class="text-center">
-                        <img src="./moduloTickets/public/build/img/crear2.png" alt="Image" width="60" height="60">
-                        <h5><i class="fa fa-link"></i> Consultar estado de ticket</h5>
-                    </div>
-                    <form role="form" method="GET" action="consultarT.php">
-                        <input type="hidden" name="view" value="ticketcon">
-                        <div class="form-group">
-                            <label for="inputEmail3" class="col-6 form-label">Email</label>
-                            <div class="col-12">
-                                <input type="email" class="form-control" name="email_consul" placeholder="Email" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-6 form-label">ID Ticket</label>
-                            <div class="col-12">
-                                <input type="text" class="form-control" name="id_consul" placeholder="ID Ticket" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-danger"><i class="fa fa-link"></i> Consultar Ticket</button>
-                                </div>
-                                <BR>
-                            </div>
+        
+            <div class="ticket-card">
+                <header class="ticket-card__title"><p>Consultar Estado del Ticket</p></header>
+                <div class="ticket-card__info">
+                    <!-- <img src="./moduloTickets/public/build/img/crear2.png" alt="Consultar estado del ticket" class="ticket-card__image"> -->
+                    <p class="ticket-card__subtitle"><i class="fas fa-info-circle ticket-card__icon"></i> Verificar Estado del Ticket</p>
+                    
+                    <p class="ticket-card__text">Si deseas consultar el estado de un ticket existente, utiliza este formulario.</p>
+                    <form action="consultarT.php" method="GET" class="ticket-card__form">
+                        <label for="email" class="ticket-card__label">Correo Electrónico</label>
+                        <input type="email" id="email" name="email_consul" placeholder="Introduce tu correo" class="ticket-card__input" required>
+                        <label for="ticket-id" class="ticket-card__label">ID del Ticket</label>
+                        <input type="text" id="ticket-id" name="id_consul" placeholder="Introduce el ID del ticket" class="ticket-card__input" required>
+                        <div class="ticket-card__button-container">
+                            <button type="submit" class="ticket-card__button">Consultar Ticket</button>
                         </div>
                     </form>
                 </div>
             </div>
+
         </div>
+
     </div>
-</div>
+    
+</section>

@@ -1,0 +1,17 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+body {
+    font-family: v.$fuente-principal;
+    // @include m.texto-fluido(1.5rem, 1.8rem);
+    background-color: v.$gris-claro;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}

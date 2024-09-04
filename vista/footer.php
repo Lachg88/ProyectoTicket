@@ -1,5 +1,6 @@
  <!-- Footer Area -->
- <footer id="footer" class="footer ">
+ <footer id="footer" class="footer">
+ <!-- mt-auto -->
 			<!-- Footer Top -->
 			<!-- Copyright -->
 			<div class="copyright" style="background-color:green">

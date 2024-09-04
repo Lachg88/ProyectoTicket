@@ -16,12 +16,12 @@
     overflow: hidden;
     text-align: center;
     color: v.$blanco;
-    background-color: v.$verdeoscuro;
+    background-color: v.$verde-oscuro;
 }
 
 .bg-celdas {
     tr:nth-child(odd) {
-        background-color: lighten(v.$verdeoscuro, 50%);
+        background-color: lighten(v.$verde-oscuro, 50%);
     }
 }
 

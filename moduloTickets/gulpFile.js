@@ -3,7 +3,7 @@ import { src, dest, watch, series, parallel } from 'gulp'
 import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass'
 const sass = gulpSass(dartSass)
-
+import sourcemaps from 'gulp-sourcemaps';
 import { glob } from 'glob'
 import terser from 'gulp-terser'
 import sharp from 'sharp'
@@ -16,11 +16,11 @@ const paths = {
 }
 
 export function css( done ) {
-    src(paths.scss, {sourcemaps: true})
-        .pipe( sass({
-            outputStyle: 'compressed'
-        }).on('error', sass.logError) )
-        .pipe( dest('./public/build/css', {sourcemaps: '.'}) );
+    src(paths.scss)
+        .pipe(sourcemaps.init())
+        .pipe( sass({outputStyle: 'expanded'}).on('error', sass.logError) )
+        .pipe(sourcemaps.write('.'))
+        .pipe( dest('./public/build/css') );
     done()
 }
 
