@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="moduloTickets/public/build/css/app.css">
     <!-- Bootstrap CSS -->
 
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
@@ -16,6 +15,8 @@
     <link href="bootstrap/css/fontawesome.v5.all.css" rel="stylesheet" />
     <title>UTSV</title>
     <link rel="icon" href="imagen/utsv32.png" />
+
+    <link rel="stylesheet" href="moduloTickets/public/build/css/app.css">
 
 
     <!--script src="bootstrap/jquery/jquery-3.5.1.slim.min.js"></script-->
@@ -32,6 +33,7 @@
     <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
     <script>
         $(document).ready(function() {
+
             var table = $('#example').DataTable({
                 order: [
                     [0, "asc"]

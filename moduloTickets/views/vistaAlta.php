@@ -56,7 +56,7 @@ $fecha_actual_completa = $fecha_actual['mday'] . " de " . $meses[$fecha_actual['
             <p>Registro de Incidencia</p>
         </header>
         <div class="form1-body">
-        <form id="" name="formulario1" method="post">
+        <form id="formulario1" name="formulario1" method="post">
             <input type="hidden" name="id" id="id" value="<?php echo $campo0; ?>">
             <div class="form-group
                 <?php if (isset($_SESSION['error'])) {

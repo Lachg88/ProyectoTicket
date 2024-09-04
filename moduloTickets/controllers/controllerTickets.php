@@ -21,7 +21,7 @@ if ($_SESSION['pagina'] == 'UsuarioTicket') {
 
 if ($_SESSION['pagina'] == 'Alta de Ticket' || $_SESSION['pagina'] == 'Actualizar Ticket') {
     $id = $_SESSION['id'];
-    
+
     if ($id > 0)
         $tickets = $objticket->getTicketxid($id);
     require_once("moduloTickets/views/vistaAlta.php");
